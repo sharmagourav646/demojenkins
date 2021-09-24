@@ -27,8 +27,25 @@ pipeline {
     }
 
     stage('prod') {
-      steps {
-        echo 'deploy on prod called'
+      parallel {
+        stage('prod') {
+          steps {
+            echo 'deploy on prod called'
+          }
+        }
+
+        stage('prod2') {
+          steps {
+            echo 'prod2 called'
+          }
+        }
+
+        stage('prod3') {
+          steps {
+            echo 'prod3 called'
+          }
+        }
+
       }
     }
 
