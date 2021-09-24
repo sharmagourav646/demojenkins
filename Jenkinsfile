@@ -49,5 +49,11 @@ pipeline {
       }
     }
 
+    stage('end') {
+      steps {
+        echo 'the end.'
+      }
+    }
+
   }
 }
